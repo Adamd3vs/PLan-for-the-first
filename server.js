@@ -30,31 +30,32 @@ app.set("view engine", "ejs");//ejs orqali html yasaymiz backda
 
 
 // 4 routing codes 
-
+ 
 app.post("/create-item", (req, res) => {
 
-});
-
+});   
+ 
 app.get('/author', (req, res) => {
-    res.render("author",{user: user });
+    res.render("author",{user: user });   
 })
 app.get("/hello", function(req, res ){
     res.end(`<h1 style="background: red"> Hello world by Adam</h1>`);
-}) ;
+}) ;   
 app.get("/gift", function(req, res ){
     res.end(`<h1 style="background:red"> You are in the page of gifts`);
-}) ;
-app.get("/", function(req, res ){
+}) ;  
+app.get("/", function(req, res ){ 
     res.render("harid");
-}) ;
+}) ; 
 // http bu bizning core modulimiz 
+ 
+const server = http.createServer(app);  
 
-const server = http.createServer(app);
-
-let PORT = 3000; 
-
+let PORT = 4000;  
+ 
 server.listen(PORT, function ( )  {
     console.log(`ThE server is running succesfully on port ${PORT}`)
-});
+}); 
 
 
+ 
