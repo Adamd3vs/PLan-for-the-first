@@ -21,7 +21,7 @@ app.use(express.static("public"));//public folderni clientlarga ochib beramiz
 app.use(express.json()); //bu operation expressjson dagini object holatiga ugurib beradi 
 app.use(express.urlencoded({extended:true}));//traditional form request form dan post qilsak expres server qabul qiladi buni yozmasak form dan info qabul qilmaydi 
 
-
+ 
 // 2:session
 
 // 3backandda html yasab front ga yuborish views ga bogliqq
@@ -44,8 +44,8 @@ app.get("/hello", function(req, res ){
 app.get("/gift", function(req, res ){
     res.end(`<h1 style="background:red"> You are in the page of gifts`);
 }) ;  
-app.get("/", function(req, res ){ 
-    res.render("harid");
+app.get("/", function(req, res ){  
+    res.render("reja");
 }) ; 
 // http bu bizning core modulimiz 
  
@@ -54,7 +54,7 @@ const server = http.createServer(app);
 let PORT =3000;  
  
 server.listen(PORT, function ( )  {
-    console.log(`The server is running succesfully on port ${PORT}`)
+    console.log(`The server is running succesfully on port ${PORT}, http://localhost:${PORT}`)
 }); 
 
 
