@@ -28,10 +28,10 @@ app.set("view engine", "ejs"); // EJS da backend orqali frontedni yasaymiz
 
 // 4 Routing code
 app.post("/create-item", (req, res) => {
+  console.log('user entered / create-item: ')
   console.log(req.body);
-  console.log("user entered /create-item");
   const new_reja = req.body.reja;
-  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+  db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
     if (err) {
       console.log(err);
       res.end("Something went wrong");
@@ -41,12 +41,10 @@ app.post("/create-item", (req, res) => {
   });
 });
 
-app.get("/author", function (req, res) {
-  res.render("author", { user: user });
-});
+
 app.get("/", function (req, res) {
-  console.log("user entered /");
-  db.collection("plans")
+  console.log('user entered /');
+    db.collection("plans")
     .find()
     .toArray((err, data) => {
       if (err) {
