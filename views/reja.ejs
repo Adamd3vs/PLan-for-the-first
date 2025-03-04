@@ -26,7 +26,7 @@
         autocomplete="off"
         class="form-control mr-3"
         style="flex: 1"/>
-        <button class="btn btn-primary" style="border-radius: 20px;">Add new plan</button>
+        <button type=submit class="btn btn-primary" style="border-radius: 20px;">Add new plan</button>
     </div>
 </div>
 
@@ -36,9 +36,9 @@
 class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
 <span class="item-text"><%=item.reja%></span>
 <div> 
-    <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">Ozgartirish</button>
-    <button data-id="<%=item._id%>" class="delete-me btn btn danger btn-sm">Ochirish</button>
-</div>
+    <button type=submit data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">Ozgartirish</button>
+    <button type=submit  data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">Ochirish</button>
+</div> 
 </li>
 <% }) %>
 </ul>
@@ -46,5 +46,7 @@ class="list-group-item list-group-item-info d-flex align-items-center justify-co
 Hamma Rejalarni O'chirish</button>
 </div>
 </div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/browser.js"></script>
 </body>
 </html>
