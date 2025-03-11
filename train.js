@@ -1,8 +1,25 @@
-//task E 
-function getreverse(string) {
-  return string.split('').reverse().join('');
+//task F
+
+function findDoublers(string) {
+  let empty = {};
+  
+  for (let char of string) {
+      if (empty[char]) {
+          return true; // Agar harf oldin uchragan bo'lsa, true qaytariladi
+      }
+      empty[char] = true; // Harfni ko'rilgan deb belgilaymiz
+  }
+
+  return false;
 }
-  console.log(getreverse('string'));
+console.log(findDoublers("hello"));
+
+
+//task E 
+// function getreverse(string) {
+//   return string.split('').reverse().join('');
+// }
+//   console.log(getreverse('string'));
 //task D
 // function checkContent(string1, string2) {
 //   return string1.split("").sort().join("") === string2.split("").sort().join("");
